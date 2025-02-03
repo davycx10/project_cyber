@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url(Logo\ Initiales\ Nominatif\ Moderne\ Minimaliste\ Noir\ Rouge\ Ivoire.png) no-repeat;
+    background-size: cover;
+}
+
+nav.onglet ul li {
+    list-style-type: none;
+    display: inline-block;
+    font-size: 1.5em;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+
+nav.onglet ul li a {
+    color: #f7f7f7;
+    text-decoration: none;
+    background-color: crimson;
+    justify-content: space-between;
+    
+
+}
+
+nav.onglet ul li a:hover {
+    background-color: #f7f7f7;
+    color: crimson;
+    transition: 0.5s all   ;
+    justify-content: space-between;
+}
