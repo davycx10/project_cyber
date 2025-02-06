@@ -1,32 +1,118 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url(Logo\ Initiales\ Nominatif\ Moderne\ Minimaliste\ Noir\ Rouge\ Ivoire.png) no-repeat;
-    background-size: cover;
+    
+    background-color: #000000;
+    margin: 20px;
+    padding: 20px;
+
 }
 
-nav.onglet ul li {
+header.navbar {
+    background-color: #202020;
+    left: 588px; 
+    /* top: 34px;  */
+    color: white; 
+    font-size: 38.35px; 
+    font-family: Inter; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    align-items: center;
+    display: flex;
+
+    
+}
+
+/* genre le style du menu de navigation */
+header.navbar ul li {
     list-style-type: none;
     display: inline-block;
-    font-size: 1.5em;
-    gap: 20px;
+}
+
+header.navbar ul {
+align-items: center;
+    display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 
-nav.onglet ul li a {
+header.navbar ul li a {
     color: #f7f7f7;
     text-decoration: none;
-    background-color: crimson;
-    justify-content: space-between;
+    background-color: #202020;
+
+}
+
+header.navbar ul li a:hover {
+    background-color: #f7f7f7;
+    color: #202020;
+    transition: 0.5s all   ;
+}
+
+div.nav_logo{
+    width: 130px; 
+    height: 130px; 
+    border: 0;  
+    margin-left: 10px; 
+    left: 20px; 
+    top: -0%;
+    display: inline;
+    display: flex;
+    left: 0%;
+    /* top: 0%; */
+    flex: auto;
+}
+
+div.nav_links {
+    justify-content: center;
+    gap: 200px;
+    display: inline;
+    display: flex;
+    flex: auto;
+    font-size: 75px;
+    
+}
+
+div.page {
+    display: flex;
+    padding: 10%;
+
+    
+    /* padding-top: 5%; */
+}
+
+div.content {
+    color: white;
+    font-size: 25.99px;
+    font-family: Inter;
+    font-weight: bold;
+    letter-spacing: 6%;
+    line-height: 58.4px;
+    text-align: center;
+    justify-content: center;
+    gap: 10%;
+    float: left;
+    padding-bottom: 10%;
+    width: 50%;
+    margin-right: 10em;
+
     
 
 }
 
-nav.onglet ul li a:hover {
-    background-color: #f7f7f7;
-    color: crimson;
-    transition: 0.5s all   ;
-    justify-content: space-between;
+div.logo {
+    float: right;
+    justify-content: center;
+    gap: 10%;
+    width: 50%;
+    margin-left: 10em;
 }
+
+
+
+
+
+
+
+
+
+
