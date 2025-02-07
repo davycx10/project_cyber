@@ -1,26 +1,61 @@
-div.page {
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * 0.5);
-  padding-left: calc(var(--bs-gutter-x) * 0.5);
-  margin-top: var(--bs-gutter-y);
+div.content {
+  color: rgb(0, 0, 0);
+  font-size: 25.99px;
+  font-family: Inter;
+  font-weight: bold;
+  /* letter-spacing: 6%; */
+  /* line-height: 58.4px; */
+  text-align: center;
+  justify-content: center;
+  gap: 10%;
+  float: left;
+  padding-bottom: 10%;
+  /* width: 50%; */
+  margin-right: 10em;
+
+  
+
 }
 
 
-@media (min-width: 1400px) {
-  div.page {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    width: 100%;
-    max-width: 100%;
-    padding-right: calc(var(--bs-gutter-x) * 0.5);
-    padding-left: calc(var(--bs-gutter-x) * 0.5);
-    margin-top: var(--bs-gutter-y);
-  }
-  }
+@media (max-width: 640px) {
+  /* Appliquer une mise en page en colonne pour les petits écrans */
+  /* div.page { */
+      /* flex-direction: column; Met les éléments les uns sous les autres */
+      /* align-items: center; Centre les éléments horizontalement */
+      /* padding: 5%; Réduit l'espace autour des éléments */
+  /* } */
+
+  /* Ajuste le contenu pour qu'il prenne toute la largeur disponible */
+  div.content {
+    width: 90%; /* Prend 90% de la largeur de l'écran sur mobile */
+    margin-right: 0; /* Retire la marge droite */
+    font-size: 20px; /* Réduit la taille de la police pour les petits écrans */
+    text-align: center; /* Centre le texte */
+    padding: 20px; /* Ajoute du padding pour rendre le texte plus espacé */
+    box-sizing: border-box; /* Assure que le padding est inclus dans la largeur et la hauteur */
+    height: 0;
+    aspect-ratio: 1 / 1; /* Maintient un ratio de 1:1, donc une forme carrée */
+    /* display: flex; */
+    /* justify-content: center; Centre le texte horizontalement */
+    /* align-items: center; Centre le texte verticalement */
+    /* background-color: #333; Fond sombre pour mieux faire ressortir le texte */
+    /* color: white; Texte blanc */
+    border-radius: 10px; /* Coins arrondis pour un look plus doux */
+    }
+
+  /* Ajuste le logo sur mobile */
+  /* div.logo { */
+      /* width: 90%; Prend également 90% de la largeur de l'écran */
+      /* margin-top: 10px; Ajoute un petit espace au-dessus du logo */
+      /* display: flex; */
+      /* justify-content: center; Centre le logo */
+      /* align-items: center; Centre le logo verticalement */
+  /* } */
+/*  */
+  /* Si tu as une image dans le logo, tu peux la rendre responsive */
+  /* img.l { */
+      /* width: 100%; L'image prend toute la largeur du conteneur */
+      /* max-width: 250px; Limite la taille de l'image à 250px pour éviter qu'elle soit trop grande */
+  /* } */
+}
