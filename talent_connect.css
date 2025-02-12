@@ -31,6 +31,7 @@ header.navbar ul {
 align-items: center;
     display: flex;
     justify-content: space-between;
+    width: 100%;
     
 }
 
@@ -60,6 +61,7 @@ div.nav_logo{
     display: flex;
     left: 0%;
     flex: auto;
+    align-items: center;
 }
 
 div.nav_links {
@@ -93,7 +95,7 @@ div.content {
     float: left;
     padding-bottom: 10%;
     margin-right: 10em;
-    text-shadow: rgb(165, 7, 7) 2px 5px;
+    text-shadow: rgb(133, 3, 3) 2px 5px;
 
     
 
@@ -137,7 +139,7 @@ div.logo {
     margin: 0 5px;
     padding: 5px 10px;
     border: none;
-    background-color: #af1f00;
+    background-color: #A11C18;
     color: #202020;
     cursor: pointer;
 }
