@@ -21,7 +21,6 @@
             margin-right: 0%;
             margin-left: 0%;
             justify-content: center;
-       
         }
 
         .content {
@@ -72,6 +71,7 @@
         .section ul li {
             margin: 5px 0;
         }
+
         .dropdown {
             position: relative;
             display: inline-block;
@@ -102,8 +102,6 @@
         }
 
         @media screen and (max-width: 768px) {
-
-
             .container {
                 flex-direction: column;
                 align-items: center;
@@ -116,7 +114,7 @@
                 padding: 0%;
                 border: 0%;
                 border-style: none;
-                border-color:transparent;
+                border-color: transparent;
                 background-color: transparent;
             }
 
@@ -128,42 +126,10 @@
             .section {
                 width: 90%;
             }
-            
-            .dropdown {
-            position: relative;
-            display: inline-block;
         }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #1a1a1a;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #A11C18;
-        }
-        }
-
     </style>
 </head>
 <body>
-
-
     <header class="navbar">
         <div class="nav_logo">
             <img src="logo2.svg" alt="talent_connect">
@@ -173,9 +139,9 @@
             <div class="nav_links">
                 <li><a href="talent connect_1.html">Accueil</a></li>
                 <li class="dropdown">
-                    <a href="" target="_blank">Curriculum</a>
+                    <a href="talent_connect_cv.html" target="_blank">Curriculum</a>
                     <div class="dropdown-content">
-                        <a href="talent_connect_cv.html">Dave</a>
+                        <a href="">Dave</a>
                         <a href="">Chahrazed</a>
                         <a href="">Ibtihel</a>
                         <a href="">Loïc</a>
@@ -196,16 +162,12 @@
             </div>
         </ul>
     </header>
-
     <div class="container">
-
         <div class="content">
-
             <div class="header">
                 <h1>CV de Dave Israël</h1>
                 <div class="sub-title">Je suis étudiant en BTS SIO alternant chez OSKEY</div>
             </div>
-            
             <div class="sections">
                 <div class="section education-section">
                     <h2>Diplôme :</h2>
@@ -215,7 +177,6 @@
                         <li>en cour de préparation: BTS SIO option SLAM</li>
                     </ul>
                 </div>
-                
                 <div class="section skills-section">
                     <h2>Mes compétences :</h2>
                     <ul>
@@ -226,29 +187,9 @@
                         <li>Python</li>
                         <li>HTML</li>
                         <li>CSS</li>
-                        <li>"JavaScript"</li>
+                        <li>JavaScript</li>
                     </ul>
                 </div>
-                
-                <div class="section training-section">
-                    <h2>Ma formation :</h2>
-                    <ul>
-                        <li>Brevet des Collèges avec mention Bien</li>
-                        <li>Baccalauréat technologique avec mention Assez Bien</li>
-                        <li>Alternance chez OSKEY en tant que Développeur et Testeur</li>
-                    </ul>
-                </div>
-                
-                <div class="section experience-section">
-                    <h2>Expériences Professionnelles :</h2>
-                    <ul>
-                        <li>2024 - Présent : Développeur et Testeur chez OSKEY</li>
-                        <li>Stage en entreprise en développement web</li>
-                        <li>Projet personnel : Création d’un site web e-commerce</li>
-                    </ul>
-                </div>
-
-
             </div>
         </div>
     </div>
