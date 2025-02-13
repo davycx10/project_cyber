@@ -164,6 +164,19 @@
 </head>
 
 <body>
+    <script>
+                document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav_links");
+
+    // Vérifie que les éléments existent avant d'ajouter l'événement
+    if (hamburger && navLinks) {
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    }
+});
+    </script>
 
 
     <header class="navbar">
@@ -214,7 +227,7 @@
 
             <div class="header">
                 <h1>CV de Dave Israël</h1>
-                <div class="sub-title">Je suis étudiant en BTS SIO à AUrlom et alternant chez OSKEY</div>
+                <div class="sub-title">Je suis étudiant en BTS SIO à Aurlom et alternant chez OSKEY</div>
             </div>
 
             <div class="sections">
@@ -223,8 +236,8 @@
                     <ul>
                         <li>2019 : ASSR1</li>
                         <li>2021 : ASSR2</li>
-                        <li>2017-2021 : Brevet National des Collèges</li>
-                        <li>2021-2024 : Baccalauréat technologique</li>
+                        <li>2021 : Brevet National des Collèges avec mention Bien</li>
+                        <li>2024 : Baccalauréat technologique avec mention Assez Bien</li>
                         <li>en cour de préparation: BTS SIO option SLAM</li>
                     </ul>
                 </div>
@@ -246,18 +259,25 @@
                 <div class="section training-section">
                     <h2>Ma formation :</h2>
                     <ul>
-                        <li>Brevet des Collèges avec mention Bien</li>
-                        <li>Baccalauréat technologique avec mention Assez Bien</li>
-                        <li>Alternance chez OSKEY en tant que Développeur et Testeur</li>
+                        <li>2017-2021 Brevet des Collèges: collège Karl Marx </li>
+                        <li>2021-2024 Baccalauréat technologique: lycée de polyvalent de Cachan</li>
+                        <li>2024-Présent: BTS SIO option SLAM en alternance: Aurlom et alternant chez OSKEY </li>
                     </ul>
                 </div>
 
                 <div class="section experience-section">
                     <h2>Expériences Professionnelles :</h2>
                     <ul>
-                        <li>2024 - Présent : Développeur et Testeur chez OSKEY</li>
-                        <li>Stage en entreprise en développement web</li>
-                        <li>Projet personnel : Création d’un site web e-commerce</li>
+                        <li>2021: Stage de 3ème, école élementaire Paul Vaillant Couturier</li>
+                        <li>2024: Employé polyvalent a Carrefour</li>
+                        <li>2024- Présent: Developer and Tester (QA) à OSKEY:
+                                <li>- apprentissage de linux</li>
+                                <li>- apprentissage des commande git pour gérer les codes sources </li>
+                                <li>- apprentissage et utilisation de Python </li>
+                                <li>- apprentissage et utilisation d'Appium pour pourvoir effectuer des tests automatisé sur Android et iOS </li>
+                                <li>- apprentissage et utilisation de Selenium pour pourvoir effectuer des tests automatisé pour les sites web </li>
+
+                        </li>
                     </ul>
                 </div>
 
