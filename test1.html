@@ -3,254 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Dave</title>
     <link rel="stylesheet" href="talent_connect.css">
-    <title>CV de Dave Israël</title>
     <style>
-        body {
-            font-family: Inter;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a; 
-            color: white;
+            box-sizing: border-box;
         }
 
-        .container {
-            display: flex;
-            flex-direction: row;
-            min-height: 100vh;
-            margin-right: 0%;
-            margin-left: 0%;
-            justify-content: center;
-       
-        }
+        /* body { */
+            /* display: flex; */
+            /* flex-direction: column; */
+            /* justify-content: center; */
+            /* align-items: center; */
+            /* min-height: 100vh; */
+            /* text-align: center; */
+            /* background-color: #F5F5F5; Fond clair */
+            /* padding: 20px; */
+        /* } */
 
         .content {
+            background-color: #A11C18;
+            padding: 40px;
+            color: white;
+            border-radius: 10px;
             width: 80%;
-            padding: 20px;
+            max-width: 800px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .header {
-            text-align: center;
-            background-color: #A11C18;
-            padding: 20px 0;
-            color: white;
-        }
-
-        .sub-title {
-            font-size: 18px;
-            margin-top: 5px;
-        }
-
-        .sections {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        .section {
-            width: 45%;
-            padding: 15px;
-            box-sizing: border-box;
-            background-color: #1a1a1a;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .section h2 {
-            color: #A11C18;
-            border-bottom: 2px solid #A11C18;
-            padding-bottom: 5px;
-            text-align: center;
-        }
-
-        .section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .section ul li {
-            margin: 5px 0;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #1a1a1a;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 10px;
+        .content a {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #FFD700;
             text-decoration: none;
             display: block;
+            margin-top: 10px;
         }
 
-        .dropdown-content a:hover {
-            background-color: #A11C18;
+        .content a:hover {
+            text-decoration: underline;
+            color: #fff;
         }
 
-        @media screen and (max-width: 768px) {
+        h1 {
+            font-size: 2em;
+        }
 
+        p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
 
-            .container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
+        /* 📱 Responsive Design */
+        @media (max-width: 768px) {
+            .content {
+                width: 95%;
+                padding: 20px;
             }
 
-            .header {
-                display: block;
-                order: 1;
-                padding: 0%;
-                border: 0%;
-                border-style: none;
-                border-color:transparent;
-                background-color: transparent;
+            h1 {
+                font-size: 1.6em;
             }
 
-            .sections {
-                flex-direction: column;
-                align-items: center;
+            p {
+                font-size: 1em;
             }
 
-            .section {
-                width: 90%;
+            .content a {
+                font-size: 1.3em;
             }
-            
-            .dropdown {
-            position: relative;
-            display: inline-block;
         }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #1a1a1a;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #A11C18;
-        }
-        }
-
     </style>
 </head>
 <body>
-
-
+    
     <header class="navbar">
         <div class="nav_logo">
-            <img src="logo2.svg" alt="talent_connect">
-        </div> 
-        <ul>
-            <button class="hamburger">☰</button>
-            <div class="nav_links">
-                <li><a href="talent connect_1.html">Accueil</a></li>
-                <li class="dropdown">
-                    <a href="" target="_blank">Curriculum</a>
-                    <div class="dropdown-content">
-                        <a href="talent_connect_cv.html">Dave</a>
-                        <a href="">Chahrazed</a>
-                        <a href="">Ibtihel</a>
-                        <a href="">Loïc</a>
-                        <a href="">Chahinez</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="">Portfolios</a>
-                    <div class="dropdown-content">
-                        <a href="">Dave</a>
-                        <a href="">Chahrazed</a>
-                        <a href="">Ibtihel</a>
-                        <a href="">Loïc</a>
-                        <a href="">Chahinez</a>
-                    </div>
-                </li>
-                <li><a href="" target="_blank">Contact</a></li>
-            </div>
-        </ul>
+            <img src="logo2.svg" alt="Talent Connect">
+        </div>
     </header>
 
-    <div class="container">
-
-        <div class="content">
-
-            <div class="header">
-                <h1>CV de Dave Israël</h1>
-                <div class="sub-title">Je suis étudiant en BTS SIO alternant chez OSKEY</div>
-            </div>
-            
-            <div class="sections">
-                <div class="section education-section">
-                    <h2>Diplôme :</h2>
-                    <ul>
-                        <li>2017-2021 : Brevet National des Collèges</li>
-                        <li>2021-2024 : Baccalauréat technologique</li>
-                        <li>en cour de préparation: BTS SIO option SLAM</li>
-                    </ul>
-                </div>
-                
-                <div class="section skills-section">
-                    <h2>Mes compétences :</h2>
-                    <ul>
-                        <li>Appium</li>
-                        <li>Selenium</li>
-                        <li>Microsoft Word</li>
-                        <li>Microsoft PowerPoint</li>
-                        <li>Python</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>"JavaScript"</li>
-                    </ul>
-                </div>
-                
-                <div class="section training-section">
-                    <h2>Ma formation :</h2>
-                    <ul>
-                        <li>Brevet des Collèges avec mention Bien</li>
-                        <li>Baccalauréat technologique avec mention Assez Bien</li>
-                        <li>Alternance chez OSKEY en tant que Développeur et Testeur</li>
-                    </ul>
-                </div>
-                
-                <div class="section experience-section">
-                    <h2>Expériences Professionnelles :</h2>
-                    <ul>
-                        <li>2024 - Présent : Développeur et Testeur chez OSKEY</li>
-                        <li>Stage en entreprise en développement web</li>
-                        <li>Projet personnel : Création d’un site web e-commerce</li>
-                    </ul>
-                </div>
-
-
-            </div>
-        </div>
+    <div class="content">
+        <h1>Bienvenue sur mon portfolio</h1>
+        <p>
+            Découvrez l'ensemble de mes projets et réalisations en explorant mon  
+            <a href="https://github.com/davycx10?tab=repositories" target="_blank">compte GitHub</a>.  
+            Mon GitHub est bien plus qu'un simple dépôt de code : **c'est mon portfolio en ligne !**  
+            Cliquez et plongez directement dans mes projets et référentiels, où vous pourrez voir  
+            mon travail et mes compétences en action.
+        </p>
+        <hr>
+        <h1>Welcome to my portfolio</h1>
+        <p>
+            Discover all my projects and achievements by exploring my  
+            <a href="https://github.com/davycx10?tab=repositories" target="_blank">GitHub account</a>.  
+            My GitHub is more than just a code repository: **it's my online portfolio!**  
+            Click and dive directly into my projects and repositories, where you can see  
+            the work I've done and my skills in action.
+        </p>
     </div>
+
 </body>
 </html>
+

@@ -5,8 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolios Dave </title>
     <link rel="stylesheet" href="talent_connect.css">
+    <style>
+
+        .container {
+            /* display: flex; */
+            flex-direction: row;
+            min-height: 100vh;
+            margin-right: 0%;
+            margin-left: 0%;
+            justify-content: center;
+            padding: 5%;
+
+        }
+
+    .content {
+            /* display: flex; */
+            text-align: center;
+            background-color: #A11C18;
+            padding: 20px 0;
+            color: white;
+            background-color: transparent;
+        }
+    .content a {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #A11C18;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+
+    .content a:hover {
+            text-decoration: underline;
+            color: #fff;
+        }
+
+    hr {
+        height: 3px;
+        background-color: #A11C18;
+        border: none;
+    }
+
+    h1 {
+            font-size: 2em;
+        }
+
+
+    p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+    </style>
+
 </head>
+
 <body>
+
+    <script>
+                
+
+        document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav_links");
+
+    // Vérifie que les éléments existent avant d'ajouter l'événement
+    if (hamburger && navLinks) {
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    }
+});
+    </script>
     
     <header class="navbar">
 
@@ -50,7 +120,31 @@
 
     </header>
 
+<div class="container">
+        <div class="content">
+            <h1>Bienvenue sur mon portfolio</h1>
+            <p>
+                Découvrez l'ensemble de mes projets et réalisations en explorant mon  
+                <a href="https://github.com/davycx10?tab=repositories" target="_blank">compte GitHub</a>.  <br>
+                Mon GitHub est bien plus qu'un simple dépôt de code : c'est mon portfolio en ligne !  
+                Cliquez et plongez directement dans mes projets et référentiels, où vous pourrez voir  
+                mon travail et mes compétences en action.
+            </p>
 
+            <br>
+
+            <hr>
+            
+            <h1>Welcome to my portfolio</h1>
+            <p>
+                Discover all my projects and achievements by exploring my  
+                <a href="https://github.com/davycx10?tab=repositories" target="_blank">GitHub account</a>.  <br> 
+                My GitHub is more than just a code repository: it's my online portfolio! 
+                Click and dive directly into my projects and repositories, where you can see  
+                the work I've done and my skills in action.
+            </p>
+        </div>
+    </div>
 
 </body>
 </html>
