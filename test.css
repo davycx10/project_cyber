@@ -1,24 +1,18 @@
 body {
     
   background-color: #000000;
-  margin: 20px;
-  padding: 20px;
-
 }
 
 header.navbar {
   background-color: #202020;
   left: 588px; 
-  /* top: 34px;  */
   color: white; 
   font-size: 38.35px; 
   font-family: Inter; 
   font-weight: 400; 
   word-wrap: break-word;
   align-items: center;
-  display: flex;
-
-  
+  display: flex; 
 }
 
 /* genre le style du menu de navigation */
@@ -31,7 +25,7 @@ header.navbar ul {
 align-items: center;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 100%;    
 }
 
 
@@ -39,7 +33,7 @@ header.navbar ul li a {
   color: #f7f7f7;
   text-decoration: none;
   background-color: #202020;
-
+  width: 100%;
 }
 
 header.navbar ul li a:hover {
@@ -58,8 +52,8 @@ div.nav_logo{
   display: inline;
   display: flex;
   left: 0%;
-  /* top: 0%; */
   flex: auto;
+  align-items: center;
 }
 
 div.nav_links {
@@ -68,36 +62,28 @@ div.nav_links {
   display: inline;
   display: flex;
   flex: auto;
-  font-size: 75px;
   
 }
 
 div.page {
   display: flex;
   padding: 10%;
-  width: 100%;
-
-  
-  /* padding-top: 5%; */
+  justify-content: center;
 }
 
-div.content {
+div.content_text {
   color: white;
   font-size: 25.99px;
   font-family: Inter;
   font-weight: bold;
-  /* letter-spacing: 6%; */
   line-height: 58.4px;
   text-align: center;
   justify-content: center;
   gap: 10%;
   float: left;
   padding-bottom: 10%;
-  /* width: 50%; */
   margin-right: 10em;
-
-  
-
+  text-shadow: rgb(133, 3, 3) 2px 5px;
 }
 
 div.logo {
@@ -108,8 +94,75 @@ div.logo {
   margin-left: 5em;
 }
 
+.hamburger {
+  display: none; /* Caché sur grand écran */
+  font-size: 30px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+}
 
-@media (max-width: 1400px) {
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #202020;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  z-index: 1000;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1a1a1a;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #A11C18;
+}
+
+.cookie-banner button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #A11C18;
+  color: #202020;
+  cursor: pointer;
+}
+
+
+
+
+
+@media (max-width: 768px) {
 * {
   box-sizing: border-box;
 }
@@ -133,20 +186,16 @@ img {
   div.page {
       --bs-gutter-x: 1.5rem;
       --bs-gutter-y: 0;
-      /* display: flex; */
-      /* flex-wrap: wrap; */
-      /* margin-top: calc(-1 * var(--bs-gutter-y)); */
-      /* margin-right: calc(-0.5 * var(--bs-gutter-x)); */
-      /* margin-left: calc(-0.5 * var(--bs-gutter-x)); */
     flex-direction: column;
     align-items: center;
   }
-  div.content {
+
+  div.content_text {
       margin: 0%;
-      -webkit-hyphens: auto; /* césure propre */
+      -webkit-hyphens:  auto; /* césure propre */
   -moz-hyphens: auto;
   hyphens: auto;
-  word-wrap: break-word; /* passage à la ligne forcé */
+   word-wrap: break-word; /*passage à la ligne forcé */
       font-stretch: 50%;
       line-height: 100%;
   }
@@ -154,113 +203,111 @@ img {
   div.logo {
       margin: 0%;
       align-items: center;
-      display: flex;
-      
-      
+      display: flex;        
   }
+
+
   img.l {
       width: 50%;
       height: 50%;
   }
 
+  button.hamburger {
+      display: block;  /* Affiche le bouton hamburger sur mobile */
   }
-
-
-
-/* ============================ */
-/* NAVBAR & MENU HAMBURGER      */
-/* ============================ */
-
-/* Style du bouton hamburger */
-.hamburger {
-  display: none; /* Caché sur grand écran */
-  font-size: 30px;
-  color: white;
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 100;
-}
-
-/* Logo toujours en haut à gauche */
-.nav_logo {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
-/* Mode mobile */
-@media (max-width: 768px) {
-  .hamburger {
-      display: block; /* Affiche le bouton hamburger sur mobile */
-  }
-
   .nav_links {
-      display: none; /* Cache le menu */
-      flex-direction: column;
-      position: fixed;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #202020;
-      text-align: center;
-      padding-top: 100px;
-      z-index: 99;
-  }
-
-  .nav_links.active {
-      display: flex; /* Affiche le menu quand la classe active est ajoutée */
-  }
-
-  .nav_links li {
-      padding: 20px 0;
-      font-size: 24px;
-  }
-
-  .nav_links a {
-      color: white;
-      text-decoration: none;
-  }
-
-  .nav_links a:hover {
-      background-color: #f7f7f7;
-      color: #202020;
-      transition: 0.3s ease-in-out;
-  }
+    display: none; /* Masque les liens par défaut */
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    gap: 15px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #202020;
+    overflow-y: auto; /* Désactive le scroll du menu */
+    z-index: 99;
+}
+  .nav_links {
+    display: none; /* Masque les liens */
+    flex-direction: column;
+    align-items: flex-start; /* Aligne les éléments à gauche */
+    padding-left: 20px;
+    gap: 15px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Empêche le scroll */
+    background-color: #202020;
+    overflow-y: hidden; /* Désactive le scroll */
+    z-index: 99;
 }
 
-/* ============================ */
-/* ORGANISATION DU CONTENU      */
-/* ============================ */
-
-/* Mode mobile : paragraphe au-dessus de l’image */
-@media (max-width: 768px) {
-  .page {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-  }
-
-  .content {
-      width: 80%;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 20px; /* Bord arrondi pour effet carré */
-      text-align: center;
-  }
-
-  .logo {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-  }
-
-  .l {
-      width: 70%;
-      height: auto;
-  }
+/* Quand le menu est actif (affiché) */
+.nav_links.active {
+    display: flex;
 }
+
+/* Désactive le scroll du body quand le menu est ouvert */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Ajuste le style des liens */
+.nav_links a {
+    font-size: 16px;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+
+  .dropdown .dropdown-content {
+    display: none;  /* Cache le menu déroulant par défaut */
+    position: relative; /* Position relative pour qu'il s'affiche sous l'élément parent */
+    background-color: transparent; /* Supprime le fond coloré */
+    box-shadow: none; /* Supprime les ombres */
+}
+
+.dropdown.active .dropdown-content {
+    display: block; /* Affiche le menu déroulant lorsque la classe active est ajoutée */
+}
+
+.dropdown a {
+    display: flex; /* Utilisation de flexbox pour aligner le texte et l'icône */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+  .dropdown a::after {
+    content: "▼";
+    font-size: 16px; /* Réduit la taille de la flèche */
+    margin-left: 10px; /* Rapproche la flèche du texte */
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+
+.dropdown.active a::after {
+    transform: rotate(180deg); /* Tourne la flèche vers le haut quand le menu est ouvert */
+}
+
+
+  }
+
+
+
+
+
+/* .hamburger { */
+    /* display: flex;  */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* cursor: pointer; */
+    /* padding: 10px; */
+/* } */

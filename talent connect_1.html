@@ -11,8 +11,6 @@
 
     <script>
         
-        // src = "script.js"
-
         document.addEventListener("DOMContentLoaded", () => {
     const hamburger = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav_links");
@@ -23,6 +21,28 @@
             navLinks.classList.toggle("active");
         });
     }
+});
+
+window.onload = function() {
+    if (getCookie("cookiesAccepted") === null) {
+        document.getElementById("cookieBanner").style.display = "block";
+    }
+
+    // Forcer l'affichage des liens cachés en mobile
+    document.querySelector(".nav_links").style.display = "flex";
+};
+
+        document.addEventListener("DOMContentLoaded", () => {
+    const dropdowns = document.querySelectorAll(".dropdown");
+
+    dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector("a"); // Sélectionne l'élément <a> du dropdown
+
+        link.addEventListener("click", (event) => {
+            event.preventDefault(); // Empêche la navigation
+            dropdown.classList.toggle("active"); // Ajoute/enlève la classe active pour afficher/masquer le menu
+        });
+    });
 });
 
 

@@ -1,110 +1,84 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Dave</title>
-    <link rel="stylesheet" href="talent_connect.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* body { */
-            /* display: flex; */
-            /* flex-direction: column; */
-            /* justify-content: center; */
-            /* align-items: center; */
-            /* min-height: 100vh; */
-            /* text-align: center; */
-            /* background-color: #F5F5F5; Fond clair */
-            /* padding: 20px; */
-        /* } */
-
-        .content {
-            background-color: #A11C18;
-            padding: 40px;
-            color: white;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 800px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .content a {
-            font-size: 1.6em;
-            font-weight: bold;
-            color: #FFD700;
-            text-decoration: none;
-            display: block;
-            margin-top: 10px;
-        }
-
-        .content a:hover {
-            text-decoration: underline;
-            color: #fff;
-        }
-
-        h1 {
-            font-size: 2em;
-        }
-
-        p {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-
-        /* 📱 Responsive Design */
-        @media (max-width: 768px) {
-            .content {
-                width: 95%;
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 1.6em;
-            }
-
-            p {
-                font-size: 1em;
-            }
-
-            .content a {
-                font-size: 1.3em;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="test.css">
+    <title>Document</title>
 </head>
 <body>
-    
+    <script>
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav_links");
+    const body = document.body; 
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active"); // Affiche ou masque le menu
+            body.classList.toggle("no-scroll"); // Désactive ou active le scroll du body
+        });
+    }
+
+    // Ajoute l'événement pour les dropdowns
+    const dropdowns = document.querySelectorAll(".dropdown");
+    dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector("a"); 
+
+        link.addEventListener("click", (event) => {
+            event.preventDefault(); 
+            dropdown.classList.toggle("active"); 
+        });
+    });
+});
+
+
+    </script>
+
     <header class="navbar">
+
         <div class="nav_logo">
-            <img src="logo2.svg" alt="Talent Connect">
+            <img src="logo2.svg" alt="talent_connect">
         </div>
+
+        <ul>
+            <button class="hamburger">☰</button>
+
+            <div class="nav_links">
+
+                <li><a href="talent connect_1.html">Accueil</a></li>
+
+                <li class="dropdown">
+
+                    <a>Curriculum</a>
+                    <div class="dropdown-content">
+                        <a href="talent_connect_cv.html">Dave</a>
+                        <a href="" target="_blank">Chahrazed</a>
+                        <a href="" target="_blank">Ibtihel</a>
+                        <a href="" target="_blank">Loïc</a>
+                        <a href="" target="_blank">Chahinez</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a>Portfolios</a>
+                    <div class="dropdown-content">
+                        <a href="portfolio_dave.html" target="_blank">Dave</a>
+                        <a href="" target="_blank">Chahrazed</a>
+                        <a href="" target="_blank">Ibtihel</a>
+                        <a href="" target="_blank">Loïc</a>
+                        <a href="" target="_blank">Chahinez</a>
+                    </div>
+                </li>
+
+                <li><a href="" target="_blank">Contact</a></li>
+
+            </div>
+        </ul>
+
     </header>
 
-    <div class="content">
-        <h1>Bienvenue sur mon portfolio</h1>
-        <p>
-            Découvrez l'ensemble de mes projets et réalisations en explorant mon  
-            <a href="https://github.com/davycx10?tab=repositories" target="_blank">compte GitHub</a>.  
-            Mon GitHub est bien plus qu'un simple dépôt de code : **c'est mon portfolio en ligne !**  
-            Cliquez et plongez directement dans mes projets et référentiels, où vous pourrez voir  
-            mon travail et mes compétences en action.
-        </p>
-        <hr>
-        <h1>Welcome to my portfolio</h1>
-        <p>
-            Discover all my projects and achievements by exploring my  
-            <a href="https://github.com/davycx10?tab=repositories" target="_blank">GitHub account</a>.  
-            My GitHub is more than just a code repository: **it's my online portfolio!**  
-            Click and dive directly into my projects and repositories, where you can see  
-            the work I've done and my skills in action.
-        </p>
-    </div>
 
 </body>
 </html>
-

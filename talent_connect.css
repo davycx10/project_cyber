@@ -233,6 +233,7 @@ div.logo {
     .nav_links.active {
         display: flex; /* Affiche le menu quand la classe active est ajoutée */
     }
+    
     .dropdown {
         position: relative;
         display: inline-block;
