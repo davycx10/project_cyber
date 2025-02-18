@@ -11,39 +11,43 @@
 
     <script>
         
+        
+
         document.addEventListener("DOMContentLoaded", () => {
     const hamburger = document.querySelector(".hamburger");
     const navLinks = document.querySelector(".nav_links");
+    const dropdowns = document.querySelectorAll(".dropdown");
 
-    // Vérifie que les éléments existent avant d'ajouter l'événement
+    // ✅ Menu burger cliquable
     if (hamburger && navLinks) {
-        hamburger.addEventListener("click", () => {
+        hamburger.addEventListener("click", (event) => {
+            event.stopPropagation();  // Empêche de fermer en cliquant ailleurs
             navLinks.classList.toggle("active");
         });
     }
-});
 
-window.onload = function() {
-    if (getCookie("cookiesAccepted") === null) {
-        document.getElementById("cookieBanner").style.display = "block";
-    }
-
-    // Forcer l'affichage des liens cachés en mobile
-    document.querySelector(".nav_links").style.display = "flex";
-};
-
-        document.addEventListener("DOMContentLoaded", () => {
-    const dropdowns = document.querySelectorAll(".dropdown");
-
+    // ✅ Sous-menus accordéon
     dropdowns.forEach(dropdown => {
-        const link = dropdown.querySelector("a"); // Sélectionne l'élément <a> du dropdown
+        const button = dropdown.querySelector(".accordion-toggle");
+        const content = dropdown.querySelector(".dropdown-content");
 
-        link.addEventListener("click", (event) => {
-            event.preventDefault(); // Empêche la navigation
-            dropdown.classList.toggle("active"); // Ajoute/enlève la classe active pour afficher/masquer le menu
+        button.addEventListener("click", (event) => {
+            event.stopPropagation();
+            content.style.display = (content.style.display === "block") ? "none" : "block";
+        });
+    });
+
+    // ✅ Ferme tout si on clique ailleurs
+    document.addEventListener("click", () => {
+        if (navLinks.classList.contains("active")) {
+            navLinks.classList.remove("active");
+        }
+        document.querySelectorAll(".dropdown-content").forEach(menu => {
+            menu.style.display = "none";
         });
     });
 });
+
 
 
 function setCookie(name, value, days) {
@@ -88,31 +92,30 @@ window.onload = function() {
     
 
     <header class="navbar">
-
         <div class="nav_logo">
             <img src="logo2.svg" alt="talent_connect">
         </div>
-
+    
         <ul>
             <button class="hamburger">☰</button>
-
+    
             <div class="nav_links">
-
-                <li><a href="talent connect_1.html">Accueil</a></li>
-
+                <li><a href="talent_connect_1.html">Accueil</a></li>
+    
+                <!-- Ajout des flèches 🔽 -->
                 <li class="dropdown">
-                    <a href="">Curriculum</a>
+                    <button class="accordion-toggle" >Curriculum 🔽</button>
                     <div class="dropdown-content">
                         <a href="talent_connect_cv.html" target="_blank">Dave</a>
-                        <a href=""target="_blank">Chahrazed</a>
-                        <a href=""target="_blank">Ibtihel</a>
-                        <a href=""target="_blank">Loïc</a>
-                        <a href=""target="_blank">Chahinez</a>
+                        <a href="" target="_blank">Chahrazed</a>
+                        <a href="" target="_blank">Ibtihel</a>
+                        <a href="" target="_blank">Loïc</a>
+                        <a href="" target="_blank">Chahinez</a>
                     </div>
                 </li>
-
+    
                 <li class="dropdown">
-                    <a href="">Portfolios</a>
+                    <button class="accordion-toggle">Portfolios 🔽</button>
                     <div class="dropdown-content">
                         <a href="portfolio_dave.html" target="_blank">Dave</a>
                         <a href="" target="_blank">Chahrazed</a>
@@ -121,13 +124,12 @@ window.onload = function() {
                         <a href="" target="_blank">Chahinez</a>
                     </div>
                 </li>
-
+    
                 <li><a href="" target="_blank">Contact</a></li>
-
             </div>
         </ul>
-
     </header>
+    
 
 
 

@@ -268,7 +268,7 @@ body.no-scroll {
   .dropdown .dropdown-content {
     display: none;  /* Cache le menu déroulant par défaut */
     position: relative; /* Position relative pour qu'il s'affiche sous l'élément parent */
-    background-color: transparent; /* Supprime le fond coloré */
+    background-color: red; /* Supprime le fond coloré */
     box-shadow: none; /* Supprime les ombres */
 }
 
@@ -280,7 +280,7 @@ body.no-scroll {
     display: flex; /* Utilisation de flexbox pour aligner le texte et l'icône */
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    background-color: aqua;
 }
 
 
