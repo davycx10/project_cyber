@@ -21,7 +21,7 @@
     // ✅ Menu burger cliquable
     if (hamburger && navLinks) {
         hamburger.addEventListener("click", (event) => {
-            event.stopPropagation();  // Empêche de fermer en cliquant ailleurs
+           // event.stopPropagation();  // Empêche de fermer en cliquant ailleurs
             navLinks.classList.toggle("active");
         });
     }
@@ -34,18 +34,27 @@
         button.addEventListener("click", (event) => {
             event.stopPropagation();
             content.style.display = (content.style.display === "block") ? "none" : "block";
+            // ✅ Assure que le menu principal est toujours scrollable
+            navLinks.style.overflowY = "auto";
+
+            // ✅ Ferme les autres sous-menus avant d'ouvrir celui-ci
+            document.querySelectorAll(".dropdown-content").forEach(menu => {
+                if (menu !== content) {
+                    menu.style.display = "none";
+                }
+            });
         });
     });
 
     // ✅ Ferme tout si on clique ailleurs
-    document.addEventListener("click", () => {
-        if (navLinks.classList.contains("active")) {
-            navLinks.classList.remove("active");
-        }
-        document.querySelectorAll(".dropdown-content").forEach(menu => {
-            menu.style.display = "none";
-        });
-    });
+    // document.addEventListener("click", () => {
+    //     if (navLinks.classList.contains("active")) {
+    //         navLinks.classList.remove("active");
+    //     }
+    //     document.querySelectorAll(".dropdown-content").forEach(menu => {
+    //         menu.style.display = "none";
+    //     });
+    // });
 });
 
 
@@ -107,10 +116,10 @@ window.onload = function() {
                     <button class="accordion-toggle" >Curriculum 🔽</button>
                     <div class="dropdown-content">
                         <a href="talent_connect_cv.html" target="_blank">Dave</a>
-                        <a href="" target="_blank">Chahrazed</a>
-                        <a href="" target="_blank">Ibtihel</a>
-                        <a href="" target="_blank">Loïc</a>
-                        <a href="" target="_blank">Chahinez</a>
+                        <a>Chahrazed</a>
+                        <a href="">Ibtihel</a>
+                        <a href="">Loïc</a>
+                        <a href="talent_connect_cv.html" target="_blank">Chahinez</a>
                     </div>
                 </li>
     
@@ -118,7 +127,7 @@ window.onload = function() {
                     <button class="accordion-toggle">Portfolios 🔽</button>
                     <div class="dropdown-content">
                         <a href="portfolio_dave.html" target="_blank">Dave</a>
-                        <a href="" target="_blank">Chahrazed</a>
+                        <a href="">Chahrazed</a>
                         <a href="" target="_blank">Ibtihel</a>
                         <a href="" target="_blank">Loïc</a>
                         <a href="" target="_blank">Chahinez</a>

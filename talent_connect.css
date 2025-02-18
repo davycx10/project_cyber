@@ -225,11 +225,16 @@ button {
         top: 60px;
         left: 0;
         width: 100%;
-        height: 100%;
+        /* height: 100%; */
         background-color: #202020;
         text-align: center;
         padding-top: 100px;
         z-index: 99;
+        max-height: 80vh; /* Limite la hauteur du menu */
+        overflow-y: auto; /* Active le défilement vertical */
+        scrollbar-width: thin; /* Ajuste la barre de défilement pour Firefox */
+        scrollbar-color: #A11C18 #202020; /* Couleur de la barre de défilement */
+        scroll-behavior: smooth;
     }
 
     .nav_links.active {
