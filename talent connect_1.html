@@ -8,96 +8,9 @@
 </head>
 
 <body >
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script>
-        
-        
-
-        document.addEventListener("DOMContentLoaded", () => {
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav_links");
-    const dropdowns = document.querySelectorAll(".dropdown");
-
-    // ✅ Menu burger cliquable
-    if (hamburger && navLinks) {
-        hamburger.addEventListener("click", (event) => {
-           // event.stopPropagation();  // Empêche de fermer en cliquant ailleurs
-            navLinks.classList.toggle("active");
-        });
-    }
-
-    // ✅ Sous-menus accordéon
-    dropdowns.forEach(dropdown => {
-        const button = dropdown.querySelector(".accordion-toggle");
-        const content = dropdown.querySelector(".dropdown-content");
-
-        button.addEventListener("click", (event) => {
-            event.stopPropagation();
-            content.style.display = (content.style.display === "block") ? "none" : "block";
-            // ✅ Assure que le menu principal est toujours scrollable
-            navLinks.style.overflowY = "auto";
-
-            // ✅ Ferme les autres sous-menus avant d'ouvrir celui-ci
-            document.querySelectorAll(".dropdown-content").forEach(menu => {
-                if (menu !== content) {
-                    menu.style.display = "none";
-                }
-            });
-        });
-    });
-
-    // ✅ Ferme tout si on clique ailleurs
-    // document.addEventListener("click", () => {
-    //     if (navLinks.classList.contains("active")) {
-    //         navLinks.classList.remove("active");
-    //     }
-    //     document.querySelectorAll(".dropdown-content").forEach(menu => {
-    //         menu.style.display = "none";
-    //     });
-    // });
-});
-
-
-
-function setCookie(name, value, days) {
-    let expires = "";
-    if (days) {
-        let date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value || "") + expires + "; path=/";
-}
-
-function getCookie(name) {
-    let nameEQ = name + "=";
-    let ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
-}
-
-function acceptCookies() {
-    setCookie("cookiesAccepted", "true", 30);
-    document.getElementById("cookieBanner").style.display = "none";
-}
-
-function declineCookies() {
-    setCookie("cookiesAccepted", "false", 30);
-    document.getElementById("cookieBanner").style.display = "none";
-}
-
-window.onload = function() {
-    if (getCookie("cookiesAccepted") === null) {
-        document.getElementById("cookieBanner").style.display = "block";
-    }
-}
-
-
-    </script>
+<script src="talent_connect.js"></script>
     
 
     <header class="navbar">
@@ -111,20 +24,20 @@ window.onload = function() {
             <div class="nav_links">
                 <li><a href="talent_connect_1.html">Accueil</a></li>
     
-                <!-- Ajout des flèches 🔽 -->
+                <!-- Ajout des flèches🔻 -->
                 <li class="dropdown">
-                    <button class="accordion-toggle" >Curriculum 🔽</button>
+                    <button class="accordion-toggle" >Curriculum 🔻</button>
                     <div class="dropdown-content">
                         <a href="talent_connect_cv.html" target="_blank">Dave</a>
-                        <a>Chahrazed</a>
-                        <a href="">Ibtihel</a>
-                        <a href="">Loïc</a>
-                        <a href="talent_connect_cv.html" target="_blank">Chahinez</a>
+                        <a href="" target="_blank">Chahrazed</a>
+                        <a href="" target="_blank">Ibtihel</a>
+                        <a href="" target="_blank">Loïc</a>
+                        <a href="" target="_blank">Chahinez</a>
                     </div>
                 </li>
     
                 <li class="dropdown">
-                    <button class="accordion-toggle">Portfolios 🔽</button>
+                    <button class="accordion-toggle">Portfolios 🔻</button>
                     <div class="dropdown-content">
                         <a href="portfolio_dave.html" target="_blank">Dave</a>
                         <a href="">Chahrazed</a>

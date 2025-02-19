@@ -3,82 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="test.css">
-    <title>Document</title>
+    <title>Talent Connect</title>
+    <link rel="stylesheet" href="talent_connect.css"> 
+
+    <!-- ✅ Intégration de Tailwind CSS et Alpine.js -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x/dist/cdn.min.js" defer></script>
+
 </head>
-<body>
+<body x-data="{ openMenu: null }"> <!-- Alpine.js pour gérer les menus -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
-
-document.addEventListener("DOMContentLoaded", () => {
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav_links");
-    const body = document.body; 
-
-    if (hamburger && navLinks) {
-        hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("active"); // Affiche ou masque le menu
-            body.classList.toggle("no-scroll"); // Désactive ou active le scroll du body
+    $(document).ready(function () {
+        // ✅ Gestion du menu burger (mode mobile)
+        $(".hamburger").click(function (event) {
+            event.stopPropagation();
+            $(".nav_links").toggleClass("active");
         });
-    }
-
-    // Ajoute l'événement pour les dropdowns
-    const dropdowns = document.querySelectorAll(".dropdown");
-    dropdowns.forEach(dropdown => {
-        const link = dropdown.querySelector("a"); 
-
-        link.addEventListener("click", (event) => {
-            event.preventDefault(); 
-            dropdown.classList.toggle("active"); 
+    
+        // ✅ Gestion des sous-menus déroulants
+        $(".accordion-toggle").click(function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+    
+            // ✅ Ferme tous les autres sous-menus avant d'ouvrir celui-ci
+            $(".dropdown-content").not($(this).next()).slideUp();
+    
         });
     });
-});
 
-
+    // ✅ Désactiver Tailwind sur PC
+    if (window.innerWidth > 768) {
+        document.querySelectorAll("script[src*='tailwind']").forEach(script => script.remove());
+    }
     </script>
 
     <header class="navbar">
-
         <div class="nav_logo">
             <img src="logo2.svg" alt="talent_connect">
         </div>
+    
+        <!-- ✅ Bouton hamburger pour mobile -->
+        <button class="hamburger">☰</button>
+    
+        <div class="nav_links">
+            <ul>
+                <li><a href="talent_connect_1.html">Accueil</a></li>
 
-        <ul>
-            <button class="hamburger">☰</button>
-
-            <div class="nav_links">
-
-                <li><a href="talent connect_1.html">Accueil</a></li>
-
+                <!-- ✅ Sous-menu Curriculum (Ne cache plus les autres onglets) -->
                 <li class="dropdown">
-
-                    <a>Curriculum</a>
-                    <div class="dropdown-content">
-                        <a href="talent_connect_cv.html">Dave</a>
-                        <a href="" target="_blank">Chahrazed</a>
-                        <a href="" target="_blank">Ibtihel</a>
-                        <a href="" target="_blank">Loïc</a>
-                        <a href="" target="_blank">Chahinez</a>
+                    <button class="accordion-toggle" @click.prevent="openMenu = openMenu === 1 ? null : 1">
+                        Curriculum 🔻
+                    </button>
+                    <div class="dropdown-content" x-show="openMenu === 1" x-collapse>
+                        <a href="talent_connect_cv.html" target="_blank">Dave</a>
+                        <a href="#">Chahrazed</a>
+                        <a href="#">Ibtihel</a>
+                        <a href="#">Loïc</a>
+                        <a href="#">Chahinez</a>
                     </div>
                 </li>
 
+                <!-- ✅ Sous-menu Portfolios -->
                 <li class="dropdown">
-                    <a>Portfolios</a>
-                    <div class="dropdown-content">
+                    <button class="accordion-toggle" @click.prevent="openMenu = openMenu === 2 ? null : 2">
+                        Portfolios 🔻
+                    </button>
+                    <div class="dropdown-content" x-show="openMenu === 2" x-collapse>
                         <a href="portfolio_dave.html" target="_blank">Dave</a>
-                        <a href="" target="_blank">Chahrazed</a>
-                        <a href="" target="_blank">Ibtihel</a>
-                        <a href="" target="_blank">Loïc</a>
-                        <a href="" target="_blank">Chahinez</a>
+                        <a href="#">Chahrazed</a>
+                        <a href="#">Ibtihel</a>
+                        <a href="#">Loïc</a>
+                        <a href="#">Chahinez</a>
                     </div>
                 </li>
 
-                <li><a href="" target="_blank">Contact</a></li>
-
-            </div>
-        </ul>
-
+                <li><a href="#" target="_blank">Contact</a></li>
+            </ul>
+        </div>
     </header>
 
+    <!-- ✅ Cookie banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        Ce site utilise des cookies pour améliorer votre expérience. Acceptez-vous l'utilisation des cookies ?
+        <button onclick="acceptCookies()">Accepter</button>
+        <button onclick="declineCookies()">Refuser</button>
+    </div>
 
 </body>
 </html>
+

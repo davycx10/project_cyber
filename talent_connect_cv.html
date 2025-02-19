@@ -107,62 +107,49 @@
 </head>
 
 <body>
-    <script>
-                document.addEventListener("DOMContentLoaded", () => {
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav_links");
-
-    // Vérifie que les éléments existent avant d'ajouter l'événement
-    if (hamburger && navLinks) {
-        hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-        });
-    }
-});
-    </script>
+  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="talent_connect.js"></script>
 
 
-    <header class="navbar">
+<header class="navbar">
+    <div class="nav_logo">
+        <img src="logo2.svg" alt="talent_connect">
+    </div>
 
-        <div class="nav_logo">
-            <img src="logo2.svg" alt="talent_connect">
+    <ul>
+        <button class="hamburger">☰</button>
+
+        <div class="nav_links">
+            <li><a href="talent_connect_1.html">Accueil</a></li>
+
+            <!-- Ajout des flèches🔻 -->
+            <li class="dropdown">
+                <button class="accordion-toggle" >Curriculum 🔻</button>
+                <div class="dropdown-content">
+                    <a href="talent_connect_cv.html" target="_blank">Dave</a>
+                    <a href="" target="_blank">Chahrazed</a>
+                    <a href="" target="_blank">Ibtihel</a>
+                    <a href="" target="_blank">Loïc</a>
+                    <a href="" target="_blank">Chahinez</a>
+                </div>
+            </li>
+
+            <li class="dropdown">
+                <button class="accordion-toggle">Portfolios 🔻</button>
+                <div class="dropdown-content">
+                    <a href="portfolio_dave.html" target="_blank">Dave</a>
+                    <a href="">Chahrazed</a>
+                    <a href="" target="_blank">Ibtihel</a>
+                    <a href="" target="_blank">Loïc</a>
+                    <a href="" target="_blank">Chahinez</a>
+                </div>
+            </li>
+
+            <li><a href="" target="_blank">Contact</a></li>
         </div>
-
-        <ul>
-            <button class="hamburger">☰</button>
-
-            <div class="nav_links">
-
-                <li><a href="talent connect_1.html">Accueil</a></li>
-
-                <li class="dropdown">
-                    <a href="">Curriculum</a>
-                    <div class="dropdown-content">
-                        <a href="talent_connect_cv.html" target="_blank">Dave</a>
-                        <a href="" target="_blank">Chahrazed</a>
-                        <a href="" target="_blank">Ibtihel</a>
-                        <a href="" target="_blank">Loïc</a>
-                        <a href="" target="_blank">Chahinez</a>
-                    </div>
-                </li>
-
-                <li class="dropdown">
-                    <a href="">Portfolios</a>
-                    <div class="dropdown-content">
-                        <a href="portfolio_dave.html" target="_blank">Dave</a>
-                        <a href="" target="_blank">Chahrazed</a>
-                        <a href="" target="_blank">Ibtihel</a>
-                        <a href="" target="_blank">Loïc</a>
-                        <a href="" target="_blank">Chahinez</a>
-                    </div>
-                </li>
-
-                <li><a href="" target="_blank">Contact</a></li>
-
-            </div>
-        </ul>
-
-    </header>
+    </ul>
+</header>
 
     <div class="container">
 

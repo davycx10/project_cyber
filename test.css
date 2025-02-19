@@ -1,6 +1,6 @@
 body {
     
-  background-color: #000000;
+  background-color: #000;
 }
 
 header.navbar {
@@ -29,7 +29,7 @@ align-items: center;
 }
 
 
-header.navbar ul li a {
+header.navbar ul li a, accordion-toggle {
   color: #f7f7f7;
   text-decoration: none;
   background-color: #202020;
@@ -58,7 +58,7 @@ div.nav_logo{
 
 div.nav_links {
   justify-content: center;
-  gap: 200px;
+  gap: 100px;
   display: inline;
   display: flex;
   flex: auto;
@@ -158,7 +158,16 @@ div.logo {
   cursor: pointer;
 }
 
+button {
+  all: unset;
+}
 
+
+button:hover {
+  background-color: #f7f7f7;
+  color: #202020;
+  transition: 0.5s all
+}
 
 
 
@@ -215,99 +224,68 @@ img {
   button.hamburger {
       display: block;  /* Affiche le bouton hamburger sur mobile */
   }
-  .nav_links {
-    display: none; /* Masque les liens par défaut */
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 20px;
-    gap: 15px;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #202020;
-    overflow-y: auto; /* Désactive le scroll du menu */
-    z-index: 99;
-}
-  .nav_links {
-    display: none; /* Masque les liens */
-    flex-direction: column;
-    align-items: flex-start; /* Aligne les éléments à gauche */
-    padding-left: 20px;
-    gap: 15px;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: 100vh; /* Empêche le scroll */
-    background-color: #202020;
-    overflow-y: hidden; /* Désactive le scroll */
-    z-index: 99;
-}
 
-/* Quand le menu est actif (affiché) */
-.nav_links.active {
-    display: flex;
-}
+  div.nav_links {
+       display: none; /* Cache le menu */
+      flex-direction: column;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #202020;
+      text-align: center;
+      padding-top: 100px;
+      z-index: 99;
+      max-height: 80vh; /* Limite la hauteur du menu */
+      overflow-y: auto; /* Active le défilement vertical */
+      scrollbar-width: thin; /* Ajuste la barre de défilement pour Firefox */
+      scrollbar-color: #A11C18 #202020; /* Couleur de la barre de défilement */
+      scroll-behavior: smooth;
+  }
 
-/* Désactive le scroll du body quand le menu est ouvert */
-body.no-scroll {
-    overflow: hidden;
-}
-
-/* Ajuste le style des liens */
-.nav_links a {
-    font-size: 16px;
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-}
-
-
-  .dropdown .dropdown-content {
-    display: none;  /* Cache le menu déroulant par défaut */
-    position: relative; /* Position relative pour qu'il s'affiche sous l'élément parent */
-    background-color: red; /* Supprime le fond coloré */
-    box-shadow: none; /* Supprime les ombres */
-}
-
-.dropdown.active .dropdown-content {
-    display: block; /* Affiche le menu déroulant lorsque la classe active est ajoutée */
-}
-
-.dropdown a {
-    display: flex; /* Utilisation de flexbox pour aligner le texte et l'icône */
-    justify-content: space-between;
-    align-items: center;
-    background-color: aqua;
-}
-
-
-  .dropdown a::after {
-    content: "▼";
-    font-size: 16px; /* Réduit la taille de la flèche */
-    margin-left: 10px; /* Rapproche la flèche du texte */
-    color: white;
-    transition: transform 0.3s ease;
-}
-
-
-.dropdown.active a::after {
-    transform: rotate(180deg); /* Tourne la flèche vers le haut quand le menu est ouvert */
-}
-
-
+  .nav_links.active {
+      display: flex; /* Affiche le menu quand la classe active est ajoutée */
+      /* width: 50; */
   }
 
 
+  .dropdown {
+      position: relative;
+      display: block;
+  }
+  
+.dropdown-content {
+      display: none;
+      position: absolute;
+      /* margin-top: 5px; */
+      background-color: #1a1a1a;
+      min-width: 100%;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 3;
+  }
+  
+  .dropdown-content {
+      display: none; /* Caché par défaut */
+      flex-direction: column;
+      width: 100%;
+      background-color: #1a1a1a;
+      padding-left: 10px;
+  }
+  
+  .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+  }
+  
 
 
+  .dropdown-content a:active {
+      background-color: #A11C18; /* Change de couleur au clic */
+  }
+  
 
-/* .hamburger { */
-    /* display: flex;  */
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* cursor: pointer; */
-    /* padding: 10px; */
-/* } */
+
+  }

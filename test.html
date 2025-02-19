@@ -1,141 +1,79 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV de Dave Israël </title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #3a3a3a;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: row;
-            min-height: 100vh;
-        }
-
-        .sidebar {
-            background-color: #1a1a1a;
-            width: 20%;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .sidebar a {
-            text-decoration: none;
-            color: blue;
-            margin: 10px 0;
-        }
-
-        .content {
-            width: 80%;
-            padding: 20px;
-        }
-
-        .header {
-            text-align: center;
-            background-color: #202020;
-            color: white;
-            padding: 20px 0;
-        }
-
-        .header .sub-title {
-            background-color: #202020;
-            color: #A11C18;
-            padding: 5px;
-            margin: auto;
-        }
-
-        .sections {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        .section {
-            width: 30%;
-            padding: 10px;
-            box-sizing: border-box;
-            color: black;
-        }
-
-        .section.yellow {
-            background-color: yellow;
-        }
-
-        .section.red {
-            background-color: #A11C18;
-            color: white;
-        }
-
-        .section.blue {
-            background-color: blue;
-            color: white;
-        }
-
-        .section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .section ul li {
-            margin: 5px 0;
-        }
-    </style>
+    <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <a href="https://www.linkedin.com/feed/?highlightedUpdateType=SHARED_BY_YOUR_NETWORK&highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7281701549536423937">LinkedIn</a>
-        </div>
-        <div class="content">
-            <div class="header">
-                <h1>CV de Dave Israël</h1>
-                <div class="sub-title">Je suis étudiant en BTS SIO alternant chez OSKEY </div>
-            </div>
-            
-            <div class="sections">
-                <div class="section yellow">
-                    <h2>diplôme :</h2>
-                    <ul>
-                        <li>De 2017 à 2021 : Brevet NAtional des Collèges </li> <br>
-                        <li>De 2021 à 2024 : Baccalauréat technologique </li> <br>
-                        <li>De 2024 à  : Etudiant BTS SIO (option SLAM) </li>
-                    
-                    </ul>
-                </div>
-                <div class="section red">
-                    <h2>Mes compétences :</h2>
-                    <ul>
-                        <li>APPIUM </li>
-                        <li>Selenium</li>
-                        <li>Microsoft Word</li>
-                        <li>Microsoft PowerPoint</li>
-                        <li>Python</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Javascript</li>
-                    </ul>
-                </div>
+  
+    <div class="container" >  
 
-                <div class="section blue">
-                    <h2>Ma formation :</h2>
-                    <ul>
-                      <li> J'ai été certifié de mon Baccalauréat technologique avec la mention  assez bien </li>  <br> 
-                        <li> J'ai obtenu mon brevet des Collèges avec la mentien  bien </li> <br>
-                        <li> J'ai obtenu une alternance chez OSKEY étant que Developer and Tester  </li>
-                    </ul>
-                </div>
+<div style="display: inline-block;">
+    toto
+</div>
 
-            </div>
-        </div>
-    </div>
+
+<div style="display: inline-block;">
+    tata
+</div>
+
+
+<div style="display: inline-block;">
+ttiti
+</div>
+
+</div>
+
+<div>
+    <span style="display: block;">span 1</span>
+    <span>span2</span>
+    <span>3</span>
+</div>
+
 </body>
 </html>
+
+
+
+<!-- Ajoute jQuery si ce n'est pas déjà fait -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function () {
+    // ✅ Gestion du menu burger (mode mobile)
+    $(".hamburger").click(function (event) {
+        event.stopPropagation();
+        $(".nav_links").toggleClass("active");
+    });
+
+    // ✅ Gestion des sous-menus déroulants
+    $(".accordion-toggle").click(function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        let content = $(this).next(".dropdown-content");
+
+        // ✅ Ferme les autres sous-menus avant d'ouvrir celui-ci
+        $(".dropdown-content").not(content).slideUp();
+
+        // ✅ Alterne l'affichage du sous-menu
+        content.slideToggle();
+    });
+
+    // ✅ Empêche la fermeture immédiate du menu si on clique à l'intérieur
+    $(".dropdown-content").click(function (event) {
+        event.stopPropagation();
+    });
+
+    // ✅ Ferme les sous-menus si on clique en dehors
+    $(document).click(function () {
+        $(".dropdown-content").slideUp();
+    });
+
+    // ✅ Empêche la fermeture immédiate lorsqu'on clique sur un lien du sous-menu
+    $(".dropdown-content a").click(function (event) {
+        event.stopPropagation();
+    });
+});
+</script>
