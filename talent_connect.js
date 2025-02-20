@@ -1,33 +1,63 @@
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
     // ✅ Gestion du menu burger (mode mobile)
-    $(".hamburger").click(function (event) {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav_links");
+
+    hamburger.addEventListener("click", function (event) {
         event.stopPropagation();
-        $(".nav_links").toggleClass("active");
+        navLinks.classList.toggle("active");
+
+        // Bloque le scroll quand le menu est ouvert
+        document.body.classList.toggle("no-scroll", navLinks.classList.contains("active"));
     });
 
     // ✅ Gestion des sous-menus déroulants
-    $(".accordion-toggle").click(function (event) {
-        event.preventDefault();
-        event.stopPropagation();
+    const accordionToggles = document.querySelectorAll(".accordion-toggle");
 
-        // ✅ Ferme tous les autres sous-menus avant d'ouvrir celui-ci
-        $(".dropdown-content").not($(this).next()).slideUp();
+    accordionToggles.forEach(toggle => {
+        toggle.addEventListener("click", function (event) {
+            event.preventDefault();
+            event.stopPropagation();
 
-        // ✅ Alterne l'affichage du sous-menu
-        $(this).next(".dropdown-content").slideToggle();
+            const currentDropdown = this.nextElementSibling;
+
+            // Ferme tous les autres sous-menus
+            document.querySelectorAll(".dropdown-content").forEach(dropdown => {
+                if (dropdown !== currentDropdown) {
+                    dropdown.style.display = "none";
+                }
+            });
+
+            // Alterne l'affichage du sous-menu
+            currentDropdown.style.display = (currentDropdown.style.display === "block") ? "none" : "block";
+        });
     });
 
+    // ✅ Ferme le menu burger si on clique en dehors
+    // document.addEventListener("click", function () {
+        // navLinks.classList.remove("active");
+        // document.body.classList.remove("no-scroll");
+        // 
+        // Ferme aussi tous les sous-menus
+        // document.querySelectorAll(".dropdown-content").forEach(dropdown => {
+            // dropdown.style.display = "none";
+        // });
+    // });
+
     // ✅ Empêche la fermeture immédiate du menu si on clique à l'intérieur
-    $(".dropdown-content").click(function (event) {
-        event.stopPropagation();
+    document.querySelectorAll(".dropdown-content").forEach(dropdown => {
+        dropdown.addEventListener("click", function (event) {
+            event.stopPropagation();
+        });
     });
 
     // ✅ Empêche la fermeture immédiate lorsqu'on clique sur un lien du sous-menu
-    $(".dropdown-content a").click(function (event) {
-        event.stopPropagation();
+    document.querySelectorAll(".dropdown-content a").forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.stopPropagation();
+        });
     });
 });
-
 
 
 
