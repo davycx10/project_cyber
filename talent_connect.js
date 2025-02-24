@@ -61,6 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
 // ✅ Gestion des cookies
 function setCookie(name, value, days) {
     let expires = "";
