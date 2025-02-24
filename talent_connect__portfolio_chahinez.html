@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta type ="description" content = "Ceci est mon Portfolio en BTS SIO."/>
+    <title>PORTFOLIO de Chahinez AYADI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="talent_connect.css">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family: "Inter", serif;
+    /* background-color: whitesmoke; */
+    /* color: #1a1a1a; */
+}
+.slider{
+    width: 100%;
+    min-height: 80vh;
+    aspect-ratio: 16/9;
+    background: #090909;
+    position: relative;
+}
+
+.informatique-background{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+    /* /Plus je diminue le % plus c'est sombre/ */
+    
+
+}
+.slider-content{
+   position:absolute;
+   top: 50%;
+   left: 50%; 
+   transform: translate(-50%,-50%);
+   text-align: center;
+}
+
+ h1{  /* /Chahinez AYADI/ */
+    color: #f5f6f9;
+    font-size: 5rem;
+    font-weight: 400;
+}
+
+.slider-content P{
+    color: #f7f5f5;
+    font-size: 2rem;
+    white-space: nowrap;
+}
+h2{
+   font-size: 3rem;
+    margin-bottom: 50px;
+  
+}
+p{
+    font-size: 1.5rem;
+    line-height: 1.5em;
+}
+.section{
+   padding: 100px 0;
+}
+.boxed{
+    max-width: 1280px;
+    margin-inline:auto ;
+}
+.flex{
+    display: flex;
+}
+.dark{
+    background: #353358;
+    color: #FFF;
+}
+.gap20{
+    gap: 20px;
+}
+.w40{
+    width: 40%;
+}
+.w60{
+    width: 60%;
+}
+.text-center{
+    text-align: center;
+}
+
+.w25{
+    width: 100%;
+}
+
+.skill{
+background:#f2eded;
+border-radius :15px;
+padding: 15px;
+box-sizing: border-box;
+}
+
+.skill img{
+    width: 300px;
+    height: 500px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+.w32{
+    width: 32%;
+}
+.space-between{
+    justify-content: space-between;
+
+}
+.realisation{
+    height: auto;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.realisation a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #FFF;
+}
+.realisation img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(40%);
+    transition:.4s ease;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+
+.realisation h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 2rem;
+    width: max-content;
+}
+.realisation :hover img{
+    filter: brightness(70%);
+}
+
+.icon{
+    display: block;
+    font-size: 40px !important;
+}
+
+.label{
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.value{
+    display: block;
+    font-size: 1.2rem;
+}
+
+.contact{
+    border: 2px dashed #FFF;
+    border-radius:15px;
+    padding:30px;
+    box-sizing: border-box;
+}
+
+</style>
+
+
+</head>
+<body>
+
+    <script src="talent_connect.js"></script>
+    
+
+    <header class="navbar">
+        <div class="nav_logo">
+            <img src="logo2.svg" alt="talent_connect">
+        </div>
+    
+        <ul>
+            <button class="hamburger">☰</button>
+    
+            <div class="nav_links">
+                <li><a href="talent_connect_1.html" target="_blank">Accueil</a></li>
+    
+                <!-- Ajout des flèches🔻 -->
+                <li class="dropdown">
+                    <button class="accordion-toggle" >Curriculum 🔻</button>
+                    <div class="dropdown-content">
+                        <a href="talent_connect_cv.html" target="_blank">Dave</a>
+                        <a href="talent_connect_cv_chahrazed.html" target="_blank">Chahrazed</a>
+                        <a href="talent_connect_cv_ibtihel.html" target="_blank">Ibtihel</a>
+                        <a href="" target="_blank">Loïc</a>
+                        <a href="talent_connect_cv_chahinez.html" target="_blank">Chahinez</a>
+                    </div>
+                </li>
+    
+                <li class="dropdown">
+                    <button class="accordion-toggle">Portfolios 🔻</button>
+                    <div class="dropdown-content">
+                        <a href="portfolio_dave.html" target="_blank">Dave</a>
+                        <a href="">Chahrazed</a>
+                        <a href="talent_connect_portfolio_ibtihel.html" target="_blank">Ibtihel</a>
+                        <a href="" target="_blank">Loïc</a>
+                        <a href="talent_connect__portfolio_chahinez.html" target="_blank">Chahinez</a>
+                    </div>
+                </li>
+    
+                <li><a href="talent_connect_contact.html">Contact</a></li>
+            </div>
+        </ul>
+    </header>
+    
+
+
+
+    <div class="slider"> 
+        <img src="informatique.jpg" class="informatique-background">
+        <div class="slider-content">
+            <h1>Chahinez AYADI</h1>
+            <p>Je suis en BTS Services Informatiques aux Organisations (SIO) . </p>
+        </div>
+    </div>
+
+   <div class="section">
+    <div class="boxed">
+        <div class="flex">
+            <div class="w40">
+                <h2>A propos de moi</h2>
+            </div>
+            <div class="w60">
+                <p>Je m'appelle Chahinez AYADI, j'ai 18 ans et je suis actuellement en BTS 
+                    Services Informatiques aux Organisations (SIO) pour une durée de deux ans. 
+                    La création de ce portfolio a pour objectif de me faire évoluer dans le domaine 
+                    du développement tout en mettant en pratique mes compétences en cybersécurité, 
+                    notamment en sécurisant ce site. Ce projet me permet d'allier théorie et pratique, 
+                    tout en développant des compétences essentielles pour ma future carrière.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+   </div>
+   <div class="section dark ">
+        <div class="boxed text-center">
+            <h2>Découvrez mes compétences en cours</h2>
+            <div class="flex gap20">
+                <div class="w25 skill">
+                    <img src="langague.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="boxed text-center">
+            <h2>Mes réalisations</h2>
+            <div class="flex wrap space-between">
+                
+                <div class="w32 realisation">
+                    <a href="">
+                        <img src="rea2.jpg" >
+                        <h3>Calculatrice</h3>
+                    </a>
+                    
+
+                </div>
+                <div class="w32 realisation">
+                    <a href="">
+                        <img src="rea5.png" >
+                        <h3>Tableau de Données</h3>
+                    </a>
+                    
+
+                </div>
+                <div class="w32 realisation">
+                    <a href="">
+                        <img src="réalisation html.png" >
+                        <h3>Formulaire</h3>
+                    </a>
+                    
+
+                </div>
+                <div class="w32 realisation">
+                    <a href="">
+                        <img src="console.png" >
+                        <h3>Objet</h3>
+                    </a>
+                    
+
+                </div>
+                <div class="w32 realisation">
+                    <a href="">
+                        <img src="devi.jpg" >
+                        <h3>Devinette</h3>
+                    </a>
+                    
+
+                </div>
+                <div class="w32 realisation">
+                    <a href="">
+                        <img src="gestion.jpg" >
+                        <h3>Site d'école</h3>
+                    </a>
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="section dark  ">
+        <div class="boxed text-center">
+             <h2>Contactez-moi</h2>
+            <div class="flex space-between">
+
+                <div class="w32 contact">
+                    <span class="material-symbols-outlined icon">mail</span>
+                    <span class="label">E-mail</span>
+                    <span class="value">chahinez.ayadi95@gmail.com</span>
+                </div>  
+
+                <div class="w32 contact">
+                    <span class="material-symbols-outlined icon">phone</span>
+                    <span class="label">Téléphone</span>
+                    <span class="value">06.98.90.53.47</span>
+                </div>
+
+                <div class="w32 contact">
+                    <span class="material-symbols-outlined">add</span>
+                    <span class="label">LinkedIn</span>
+                    <span class="value">Chahinez AYADI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body> 
+</html>
