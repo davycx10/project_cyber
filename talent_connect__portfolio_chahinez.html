@@ -7,6 +7,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="talent_connect.css">
 
+    <script>
+        let images = [
+    "informatique.jpg",
+    "une_autre_image.jpg", // Ajoute d'autres images ici
+];
+
+let indexActuel = 0;
+const imageSlider = document.querySelector(".informatique-background");
+
+function changerImage() {
+    indexActuel = (indexActuel + 1) % images.length;
+    imageSlider.src = images[indexActuel];
+}
+
+// Changer l'image automatiquement toutes les 5 secondes
+setInterval(changerImage, 5000);
+
+// Optionnellement, tu peux changer l'image manuellement avec un bouton
+document.querySelector("#boutonSuivant").addEventListener("click", changerImage);
+document.querySelectorAll('.skill').forEach(skill => {
+    skill.addEventListener('click', function() {
+        alert("Plus de détails sur cette compétence.");
+    });
+});
+document.querySelectorAll('.realisation a').forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault(); // Empêcher l'action par défaut de l'ancre
+        const titreRealisation = item.querySelector('h3').textContent;
+        afficherModal(titreRealisation);
+    });
+});
+
+function afficherModal(titre) {
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>${titre}</h2>
+            <p>Plus de détails sur cette réalisation...</p>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    modal.querySelector('.close').addEventListener('click', () => modal.remove());
+}
+document.querySelector("form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Empêcher l'envoi du formulaire
+    const email = document.querySelector("input[name='email']").value;
+    const telephone = document.querySelector("input[name='phone']").value;
+    
+    if (!email || !telephone) {
+        alert("Veuillez remplir tous les champs !");
+        return;
+    }
+    
+    alert("Formulaire envoyé avec succès !");
+});
+    </script>
+
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
@@ -215,7 +274,7 @@ box-sizing: border-box;
                     <button class="accordion-toggle">Portfolios 🔻</button>
                     <div class="dropdown-content">
                         <a href="portfolio_dave.html" target="_blank">Dave</a>
-                        <a href="">Chahrazed</a>
+                        <a href="talent_connect_portfolio_charazed.html" target="_blank">Chahrazed</a>
                         <a href="talent_connect_portfolio_ibtihel.html" target="_blank">Ibtihel</a>
                         <a href="" target="_blank">Loïc</a>
                         <a href="talent_connect__portfolio_chahinez.html" target="_blank">Chahinez</a>
@@ -226,6 +285,7 @@ box-sizing: border-box;
             </div>
         </ul>
     </header>
+    
     
 
 
@@ -284,7 +344,7 @@ box-sizing: border-box;
                 </div>
                 <div class="w32 realisation">
                     <a href="">
-                        <img src="rea5.png" >
+                        <img src="rea.jpg" >
                         <h3>Tableau de Données</h3>
                     </a>
                     
@@ -292,7 +352,7 @@ box-sizing: border-box;
                 </div>
                 <div class="w32 realisation">
                     <a href="">
-                        <img src="réalisation html.png" >
+                        <img src="formulaire.jpeg" >
                         <h3>Formulaire</h3>
                     </a>
                     
@@ -300,7 +360,7 @@ box-sizing: border-box;
                 </div>
                 <div class="w32 realisation">
                     <a href="">
-                        <img src="console.png" >
+                        <img src="con.jpg" >
                         <h3>Objet</h3>
                     </a>
                     
