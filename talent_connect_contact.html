@@ -51,6 +51,48 @@
             margin-top: 10px;
         }
 
+    .container_form {
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0 auto;
+            justify-content: center;
+            padding: 5%;
+            text-align: center;
+        }
+        
+    .contact-form {
+            width: 50%;
+            margin: 20px auto;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            color: black;
+            font-weight: bold;
+        }
+
+
+    .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+    .contact-form button {
+            background-color: #A11C18;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    .contact-form button:hover {
+            background-color: #870f10;
+        }    
+
     </style>
 
 </head>
@@ -138,39 +180,25 @@
 
             <hr>
 
-            <h1>Ready to collaborate? Contact me!</h1> <br> 
+            <div class="container_form">
 
-            <p>
-                💬 Contactez-nous ! <br> <br>
                 
-            <div class="content_text_left"> 
-
-                Do you have a question, an opportunity or simply want to talk to us ? <br> <br>
-               
-              
-
-                We'd be delighted to discuss it with you ! <br> <br>
-                
-                📩 Email : contact@notre-site.com <br> <br>
-                📞 Phone : +33 7 XX XX XX XX <br> <br>
-                
-                💼 Are you a recruiter? <br> <br>
-
+                <form class="contact-form">
+                    <label for="name">Nom Entreprise</label>
+                    <input type="text" id="name" name="name" required>
             
-
-                Don't hesitate to contact us to find out more about our skills and projects.
-                 <br> <br>
-
-  
-
-                🌍 Suivez-nous sur les réseaux sociaux :
-                🔹 LinkedIn | 🔹 GitHub  
-        </div>  
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
             
-        </p>
-
-        </div>
-    </div>
-
+                    <label for="subject">Nom-prénoms </label>
+                    <input type="text" id="subject" name="subject" required>
+            
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+            
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+            
 </body>
 </html>
